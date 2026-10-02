@@ -7,4 +7,4 @@
 4. Otherwise open **Settings → Pages → Build and deployment → Deploy from a branch**, select `main` and `/ (root)`.
 5. Use the resulting GitHub Pages URL as the **Website** field in your Unity Publisher Profile.
 
-The included `/docs/` folder is the PrefabForge documentation. The separate `/sprite-alchemy/` folder contains Sprite Alchemy Studio documentation and its Quick Start. Both are linked independently from the homepage.
+The included `/docs/` folder is the current PrefabForge documentation and is linked from the homepage.
