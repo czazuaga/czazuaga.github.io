@@ -116,3 +116,16 @@ img{max-width:100%;display:block}
 .cards.one{grid-template-columns:1fr;max-width:760px}
 .tool-card .card-media{aspect-ratio:auto;max-height:520px;object-fit:contain;background:#0b0e13}
 .tool-gif{image-rendering:auto}
+
+
+/* Sprite Alchemy Studio */
+.alchemy-section{background:linear-gradient(180deg,#0b0e16,#090b0f);border-bottom:1px solid var(--line)}
+.product-title-row{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.product-title-row .lede{margin:6px 0 0}
+.product-icon{width:72px;height:72px;image-rendering:pixelated;border-radius:16px;border:1px solid #35415a;background:#0a0d13;padding:8px;flex:0 0 auto}
+.alchemy-visual{background:linear-gradient(180deg,#111620,#090c12)}
+.alchemy-visual img{border-radius:10px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.product-grid .info-card p:not(.tag){color:var(--muted);margin-bottom:0}
+@media(max-width:980px){.product-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.product-title-row{align-items:flex-start}.product-icon{width:58px;height:58px;border-radius:13px}}
