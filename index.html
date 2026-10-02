@@ -1,236 +1,324 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Carlos Azuaga — software engineer, game developer and tool creator. PrefabForge, shipped games, audio software and development tools.">
-  <title>Carlos Azuaga — Software Engineer & Game Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrefabForge v1.0 Guide</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Carlos Azuaga home">
-      <img src="assets/carlos-azuaga-logo.png" alt="Carlos Azuaga">
-    </a>
-    <nav>
-      <a href="#prefabforge">PrefabForge</a>
-      <a href="#tools">Tools</a>
-      <a href="#games">Games</a>
-      <a href="#audio">Audio</a>
-      <a href="#links">Links</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="intro wrap">
-      <div class="intro-copy">
-        <p class="eyebrow">INDEPENDENT GAMES · DEVELOPMENT TOOLS · AUDIO SOFTWARE</p>
-        <h1>Games, tools and audio software.</h1>
-        <p class="lede">Independent software and game development by Carlos Azuaga, creating commercial games, Unity/Unreal tools, audio plugins and open-source software since 2008.</p>
-        <div class="actions">
-          <a class="btn primary" href="#prefabforge">View PrefabForge</a>
-          <a class="btn" href="#games">Released Games</a>
-          <a class="btn" href="https://github.com/czazuaga" target="_blank" rel="noopener">GitHub</a>
-        </div>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="img/logo_icon.png" onerror="this.src='img/prefabforge-mark.svg'" alt="PrefabForge">
+      <div>
+        <h1>PrefabForge</h1>
+        <p>Unreal/Fab → Unity</p>
       </div>
-      <div class="portrait-card compact-portrait">
-        <img src="assets/carlos.jpg" alt="Carlos Azuaga portrait">
+    </div>
+
+    <div class="navGroup">
+      <div class="navGroupTitle">Start</div>
+      <nav class="nav">
+        <a href="#intro">Overview</a>
+        <a href="#tutorials">Video tutorials</a>
+        <a href="#quickstart">Quick Start</a>
+        <a href="#install-unreal">Install in Unreal</a>
+        <a href="#install-unity">Install in Unity</a>
+        <a href="#what">What PrefabForge does</a>
+      </nav>
+    </div>
+
+    <div class="navGroup">
+      <div class="navGroupTitle">Using it</div>
+      <nav class="nav">
+        <a href="#unreal-app">Unreal App</a>
+        <a href="#unity-plugin">Unity Plugin</a>
+        <a href="#reforge">Material Re-Forge</a>
+        <a href="#wizard">First Run Setup</a>
+      </nav>
+    </div>
+
+    <div class="navGroup">
+      <div class="navGroupTitle">Help</div>
+      <nav class="nav">
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="hero heroImage" id="intro">
+      <img class="heroLogo" src="img/PrefabForge_Header_Main.png" alt="PrefabForge - Convert Unreal/Fab Static Mesh assets into scene-ready Unity prefabs.">
+      <p>
+        Built for environment art, props, modular kits and level-design assets.
+      </p>
+      <div class="heroActions">
+        <a class="btn primary" href="#tutorials">Start with video tutorials</a>
+        <a class="btn" href="#quickstart">Quick Start</a>
+        <a class="btn" href="#install-unreal">Install Unreal side</a>
+        <a class="btn" href="#install-unity">Install Unity side</a>
       </div>
     </section>
 
-    <section class="section feature-section" id="prefabforge">
-      <div class="wrap feature-top">
-        <div class="feature-copy">
-          <p class="eyebrow">FEATURED PRODUCT</p>
-          <h2>PrefabForge</h2>
-          <p class="lede small">Turn Unreal/Fab Static Mesh assets into scene-ready Unity prefabs.</p>
-          <p class="feature-text">Built for props, environment assets, modular kits and level-design workflows. Export, import, materials, LODs and reimport — streamlined.</p>
+    <section class="section" id="tutorials">
+      <h2>Video tutorials</h2>
+      <p class="lead">
+        New to PrefabForge? Start here. The official YouTube playlist is the fastest non-technical way to see the full Unreal to Unity workflow.
+      </p>
+      <div class="callout good">
+        <b>Recommended first step:</b> watch the guided PrefabForge tutorial playlist before going into the technical sections.
+        <br><br>
+        <a class="btn primary" href="https://youtube.com/playlist?list=PLPo4M4KbG_IA&si=gDaNhdr-U9UVgBDX" target="_blank" rel="noopener">Open YouTube playlist</a>
+      </div>
+      <p>
+        New tutorials can be added to this playlist over time without changing your installed Unreal package.
+      </p>
+    </section>
+
+    <section class="section" id="what">
+      <h2>What PrefabForge does</h2>
+      <p class="lead">
+        PrefabForge is a two-part pipeline: an app that runs inside Unreal and a plugin that runs inside Unity.
+        The goal is simple: select an Unreal/Fab asset, export it, then import it as a Unity-ready prefab.
+      </p>
+
+      <div class="simpleFlow">
+        <div class="flowStep"><div class="n">Step 1</div><b>Select in Unreal</b><p>Choose a Static Mesh or Material. No Unreal technical setup required for normal use.</p></div>
+        <div class="flowStep"><div class="n">Step 2</div><b>Forge export</b><p>PrefabForge converts materials, prepares textures and optimizes heavy meshes.</p></div>
+        <div class="flowStep"><div class="n">Step 3</div><b>Import in Unity</b><p>The Unity plugin rebuilds the prefab, materials, textures and LOD setup.</p></div>
+        <div class="flowStep"><div class="n">Step 4</div><b>Repair if needed</b><p>Material Re-Forge fixes rare cases like glass, decals, foliage or opaque overrides.</p></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Designed for Static Mesh assets</h3>
+          <p>
+            PrefabForge v1.0 focuses on props, modular kits, environment pieces and level-design assets from Unreal or Fab.
+          </p>
           <div class="badges">
-            <span>Unreal Engine 5.4–5.8</span>
-            <span>Unity 2022.3+</span>
-            <span>Built-in &amp; URP</span>
-            <span>Windows / Win64</span>
-            <span>Static Meshes</span>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="docs/index.html">Read Documentation</a>
-            <a class="btn" href="https://youtube.com/playlist?list=PLPo4M4KbG_IA&si=gDaNhdr-U9UVgBDX" target="_blank" rel="noopener">Tutorial Playlist</a>
+            <span class="badge">Props</span>
+            <span class="badge">Environment</span>
+            <span class="badge">Level Design</span>
+            <span class="badge">Static Meshes</span>
           </div>
         </div>
-        <div class="feature-visual hero-visual">
-          <img src="assets/prefabforge-header.png" alt="PrefabForge — Unreal/Fab to Unity">
+        <div class="card">
+          <h3>Skill-zero Unreal workflow</h3>
+          <p>
+            For normal use, you do not need to understand Unreal materials, Nanite settings or export formats.
+            Select the asset and press the main export button.
+          </p>
+          <div class="badges">
+            <span class="badge blue">1-click export</span>
+            <span class="badge blue">Guided UI</span>
+            <span class="badge blue">Unity-ready</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="wrap prefabforge-grid">
-        <div class="video-card">
-          <div class="card-head">
-            <p class="tag">WATCH</p>
-            <h3>Official Trailer</h3>
-          </div>
-          <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/siet9FzPm2Y" title="PrefabForge trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
+    <section class="section" id="install-unreal">
+      <h2>Install PrefabForge in Unreal</h2>
+      <p class="lead">
+        Use the PrefabForge Unreal package that matches your Unreal Engine version.
+        These are the supported compiled versions.
+      </p>
 
-        <div class="info-card">
-          <div class="card-head">
-            <p class="tag">WHY IT MATTERS</p>
-            <h3>Fast to understand. Fast to use.</h3>
-          </div>
-          <ul class="feature-list">
-            <li><strong>Export from Unreal.</strong> Use the PrefabForge plugin.</li>
-            <li><strong>Import in Unity.</strong> Build a ready-to-use prefab.</li>
-            <li><strong>Keep control.</strong> Materials, LODs and reimport workflow included.</li>
+      <div class="badges">
+        <span class="badge">UE 5.4</span>
+        <span class="badge">UE 5.5</span>
+        <span class="badge">UE 5.6</span>
+        <span class="badge">UE 5.7</span>
+        <span class="badge">UE 5.8</span>
+      </div>
+
+      <ol class="steps">
+        <li>Close Unreal Engine.</li>
+        <li>Open your Unreal project folder.</li>
+        <li>Copy the PrefabForge Unreal package contents into the project.</li>
+        <li>Open the project again.</li>
+        <li>If Unreal asks to enable plugins, enable them and restart.</li>
+        <li>Open PrefabForge from the toolbar or from the PrefabForge menu.</li>
+      </ol>
+
+      <h3>Required Unreal plugins</h3>
+      <p>PrefabForge needs Unreal's editor scripting features. The first-run setup should check these automatically.</p>
+      <div class="checklist">
+        <div class="check"><div class="box">✓</div><div><b>Python Editor Script Plugin</b><br><span>Required so the PrefabForge app can run inside Unreal.</span></div></div>
+        <div class="check"><div class="box">✓</div><div><b>Editor Scripting Utilities</b><br><span>Required for editor asset operations.</span></div></div>
+        <div class="check"><div class="box">✓</div><div><b>Geometry Script</b><br><span>Required for High Fidelity material bake workflows. Normal Fast PBR workflows can still be used without it. In Unreal Engine 5.4, this plugin is marked as Beta by Epic, so Unreal may show an extra warning when enabling it.</span></div></div>
+        <div class="check"><div class="box">✓</div><div><b>PrefabForge Editor Bridge</b><br><span>Included with PrefabForge. Adds the embedded app tab and native dialogs.</span></div></div>
+        <div class="check"><div class="box">✓</div><div><b>PrefabForge Thumbnail Bridge</b><br><span>Included with PrefabForge. Improves asset thumbnails and selected asset previews.</span></div></div>
+      </div>
+
+      <div class="callout warn">
+        Unreal Engine 5.4 is the minimum supported version. Geometry Script is marked as Beta in UE 5.4 by Epic, but PrefabForge only uses it for High Fidelity bake workflows. Fast PBR export remains available without that workflow.
+      </div>
+
+      <div class="callout warn">
+        Do not install the wrong Unreal package. A compiled plugin for UE 5.7 is not the same as one for UE 5.4.
+      </div>
+    </section>
+
+    <section class="section" id="install-unity">
+      <h2>Install PrefabForge in Unity</h2>
+      <p class="lead">
+        The Unity side is installed like a normal Unity package. It adds the PrefabForge window and Material Re-Forge.
+      </p>
+
+      <ol class="steps">
+        <li>Open your Unity project.</li>
+        <li>Import the PrefabForge Unity package.</li>
+        <li>Open <b>Tools / PrefabForge / Open PrefabForge</b>.</li>
+        <li>Select the folder where Unreal exports PrefabForge assets.</li>
+        <li>Import the exported asset folder.</li>
+      </ol>
+
+      <div class="pathBox">Assets/
+└─ PrefabForge/
+   ├─ Editor/
+   └─ Shaders/</div>
+
+      <div class="callout good">
+        PrefabForge supports Built-in Render Pipeline and URP. Auto mode chooses the correct material setup for the current Unity project.
+      </div>
+    </section>
+
+    <section class="section" id="quickstart">
+      <h2>Quick Start</h2>
+      <p class="lead">Convert a Fab/Unreal Static Mesh into a Unity prefab.</p>
+
+      <ol class="steps">
+        <li>In Unreal, select one Static Mesh asset.</li>
+        <li>Open PrefabForge.</li>
+        <li>Press <b>Forge Unity-Ready Prefab</b>.</li>
+        <li>Wait until the export finishes.</li>
+        <li>Open Unity.</li>
+        <li>Open <b>Tools / PrefabForge / Open PrefabForge</b>.</li>
+        <li>Select the exported folder and import it.</li>
+        <li>Drag the generated prefab into your Unity scene.</li>
+      </ol>
+
+      <div class="callout">
+        Most users should start with this workflow. Only use advanced material options if the result needs extra visual recovery.
+      </div>
+    </section>
+
+    <section class="section" id="unreal-app">
+      <h2>PrefabForge for Unreal</h2>
+      <p class="lead">
+        This is the app that runs inside Unreal. It prepares assets for Unity.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Forge Unity-Ready Prefab</h3>
+          <p>The main button. Use it for Static Mesh assets such as props, modular pieces, environment assets and level-design meshes.</p>
+          <ul>
+            <li>Exports the mesh.</li>
+            <li>Optimizes heavy Nanite assets for Unity.</li>
+            <li>Exports textures and material data.</li>
+            <li>Creates a folder the Unity plugin can read.</li>
           </ul>
-          <div class="mini-actions">
-            <a class="text-link" href="docs/index.html">Open docs →</a>
-            <a class="text-link" href="https://youtu.be/siet9FzPm2Y" target="_blank" rel="noopener">Watch on YouTube →</a>
-          </div>
+        </div>
+        <div class="card">
+          <h3>Forge Unity-Ready Material</h3>
+          <p>Use this when you only want to convert a selected Unreal material into Unity-ready texture maps.</p>
+          <ul>
+            <li>Bakes material appearance.</li>
+            <li>Exports usable Unity texture maps.</li>
+            <li>Useful for reusable surface materials.</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-
-    <section class="section wrap" id="tools">
-      <div class="section-head">
-        <p class="eyebrow">TOOLS</p>
-        <h2>Small tools, focused workflows.</h2>
-        <p class="section-copy">Selected utility projects built around practical creative workflows.</p>
-      </div>
-      <div class="cards one media-cards">
-        <article class="card media-card tool-card">
-          <img class="card-media tool-gif" src="assets/chameleapp.gif" alt="ChameleApp Sprite Color Studio preview">
-          <div class="card-body">
-            <p class="tag">PIXEL ART TOOL</p>
-            <h3>ChameleApp</h3>
-            <p>Sprite color and palette tool for quick recoloring, palette exploration and export.</p>
-          </div>
-          <a class="btn secondary full" href="https://czazuaga.itch.io/chameleapp" target="_blank" rel="noopener">View on itch.io</a>
-        </article>
+      <h3>Nanite Optimization, in normal words</h3>
+      <p>
+        Many Fab/Unreal assets are built for Unreal's Nanite system and can be too heavy for Unity.
+        PrefabForge automatically chooses a safer Unity mesh detail value when it detects one of these assets.
+      </p>
+      <div class="callout good">
+        You can still increase detail manually if the asset is a close-up hero prop, or lower it if you need more performance.
       </div>
     </section>
 
-    <section class="section wrap" id="games">
-      <div class="section-head">
-        <p class="eyebrow">GAMES</p>
-        <h2>Released games.</h2>
-        <p class="section-copy">Play on Steam or find them on console storefronts.</p>
-      </div>
-      <div class="cards two media-cards">
-        <article class="card media-card">
-          <img class="card-media" src="assets/lords-of-exile.png" alt="Lords of Exile banner">
-          <div class="card-body">
-            <p class="tag">GAME</p>
-            <h3>Lords of Exile</h3>
-            <p>Retro action-platformer built around fast combat, tight stages and classic arcade pacing.</p>
-          </div>
-          <a class="btn secondary full" href="https://store.steampowered.com/app/1329360/Lords_of_Exile" target="_blank" rel="noopener">View on Steam</a>
-        </article>
-        <article class="card media-card">
-          <img class="card-media" src="assets/yellowcreek.png" alt="Yellowcreek Stories The Cabin Watcher banner">
-          <div class="card-body">
-            <p class="tag">GAME</p>
-            <h3>Yellowcreek Stories — The Cabin Watcher</h3>
-            <p>A first-person horror experience set in the unsettling world of Yellowcreek.</p>
-          </div>
-          <a class="btn secondary full" href="https://store.steampowered.com/app/4411840/Yellowcreek_Stories__The_Cabin_Watcher/" target="_blank" rel="noopener">View on Steam</a>
-        </article>
+    <section class="section" id="unity-plugin">
+      <h2>PrefabForge for Unity</h2>
+      <p class="lead">
+        This is the plugin that imports the folder exported from Unreal and rebuilds the asset in Unity.
+      </p>
+
+      <div class="grid">
+        <div class="card"><h3>Creates prefabs</h3><p>Generates a scene-ready Unity prefab from the exported asset.</p></div>
+        <div class="card"><h3>Builds materials</h3><p>Creates Built-in or URP materials from PrefabForge metadata.</p></div>
+        <div class="card"><h3>Configures textures</h3><p>Sets normal maps, packed maps, alpha and texture import options correctly.</p></div>
+        <div class="card"><h3>Handles LODs</h3><p>Creates Unity LOD setup when the Unreal export includes LOD meshes.</p></div>
       </div>
     </section>
 
-    <section class="section wrap" id="audio">
-      <div class="section-head">
-        <p class="eyebrow">AUDIO SOFTWARE</p>
-        <h2>VST tools and sound products.</h2>
-        <p class="section-copy">Selected commercial products released under Ravxel Audio.</p>
-      </div>
-      <div class="cards two media-cards">
-        <article class="card media-card">
-          <img class="card-media" src="assets/kaiju-808.png" alt="Kaiju 808 product image">
-          <div class="card-body">
-            <p class="tag">RAVXEL AUDIO</p>
-            <h3>Kaiju 808</h3>
-            <p>808 enhancement tool focused on punch, low-end weight and fast preset-driven workflow.</p>
-          </div>
-          <a class="btn secondary full" href="https://ravxelaudio.gumroad.com/l/kaiju808?layout=profile" target="_blank" rel="noopener">View Product</a>
-        </article>
-        <article class="card media-card">
-          <img class="card-media" src="assets/sakura-vhs.png" alt="Sakura VHS product image">
-          <div class="card-body">
-            <p class="tag">RAVXEL AUDIO</p>
-            <h3>Sakura VHS</h3>
-            <p>Tape-color and VHS-style modulation plugin for vintage character, motion and texture.</p>
-          </div>
-          <a class="btn secondary full" href="https://ravxelaudio.gumroad.com/l/sakuravhs?layout=profile" target="_blank" rel="noopener">View Product</a>
-        </article>
+    <section class="section" id="reforge">
+      <h2>Material Re-Forge</h2>
+      <p class="lead">
+        Material Re-Forge is the manual repair tool in Unity. Use it when a material imports but does not look right.
+      </p>
+
+      <table class="table">
+        <tr><th>Use this</th><th>When</th></tr>
+        <tr><td>Recover Imported</td><td>You want PrefabForge to rebuild the material from the exported metadata.</td></tr>
+        <tr><td>Opaque</td><td>The asset looks transparent/glassy but should be solid.</td></tr>
+        <tr><td>Glass</td><td>The material is real glass, dirty glass or transparent panels.</td></tr>
+        <tr><td>Foliage</td><td>Leaves, plants, thin cards or two-sided vegetation.</td></tr>
+        <tr><td>Decal Fade / Cutout</td><td>Decals, labels, stains, leaks or masked overlays.</td></tr>
+      </table>
+
+      <div class="callout good">
+        Simple rule: if something looks strange, try <b>Recover Imported</b>. If it should be solid, use <b>Opaque</b>.
       </div>
     </section>
 
-    <section class="section wrap" id="links">
-      <div class="section-head compact">
-        <p class="eyebrow">LINKS</p>
-        <h2>Code, videos and community.</h2>
+    <section class="section" id="wizard">
+      <h2>First Run Setup</h2>
+      <p class="lead">
+        For the final release, PrefabForge should guide the user with a first-run setup window instead of expecting manual troubleshooting.
+      </p>
+
+      <div class="checklist">
+        <div class="check"><div class="box">1</div><div><b>Check Unreal plugins</b><br><span>Python Editor Script Plugin, Editor Scripting Utilities, Geometry Script and PrefabForge bridges.</span></div></div>
+        <div class="check"><div class="box">2</div><div><b>Check export folder</b><br><span>Ask the user where PrefabForge should export Unity-ready assets.</span></div></div>
+        <div class="check"><div class="box">3</div><div><b>Check Unity package</b><br><span>Show where the Unity plugin is installed and how to open it.</span></div></div>
+        <div class="check"><div class="box">4</div><div><b>Run test export</b><br><span>Optional: export a small selected Static Mesh to confirm the pipeline works.</span></div></div>
       </div>
-      <div class="links-grid">
-        <a href="https://github.com/czazuaga" target="_blank" rel="noopener">
-          <div class="link-top">
-            <span class="link-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.5 1.5-5-2-7-2"/><path d="M16 22v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.52c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </span>
-            <strong>GitHub</strong>
-          </div>
-          <span>Open-source projects and code</span>
-        </a>
-        <a href="https://x.com/CZAzuaga" target="_blank" rel="noopener">
-          <div class="link-top">
-            <span class="link-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16"/><path d="M20 4L4 20"/></svg>
-            </span>
-            <strong>X / Twitter</strong>
-          </div>
-          <span>Development updates</span>
-        </a>
-        <a href="https://discord.gg/xb26HZD" target="_blank" rel="noopener">
-          <div class="link-top">
-            <span class="link-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 8.5c1.2-.7 2.4-1 3.5-1s2.3.3 3.5 1"/><path d="M8 17c-2.3 0-4-1.8-4-4V9.5C4 7 6 5 8.5 5h7C18 5 20 7 20 9.5V13c0 2.2-1.7 4-4 4l-1.5 1.5L13 17h-5z"/><circle cx="9.5" cy="11.5" r=".7" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11.5" r=".7" fill="currentColor" stroke="none"/></svg>
-            </span>
-            <strong>Discord</strong>
-          </div>
-          <span>Community and support</span>
-        </a>
-        <a href="https://www.youtube.com/@czazuaga1258" target="_blank" rel="noopener">
-          <div class="link-top">
-            <span class="link-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12s0-3.2-.4-4.8a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8C22 15.2 22 12 22 12Z"/><path d="m10 15 5-3-5-3z" fill="currentColor" stroke="none"/></svg>
-            </span>
-            <strong>YouTube</strong>
-          </div>
-          <span>Videos and tutorials</span>
-        </a>
+
+      <div class="callout">
+        This section is a release-plan note. The documentation can describe the setup now, and the app can later include the guided installer/checklist directly.
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="wrap contact-inner">
-        <div>
-          <p class="eyebrow">CONTACT</p>
-          <h2>Support, business and product contact.</h2>
-          <p>Direct contact for PrefabForge, games, audio tools and professional enquiries.</p>
-        </div>
-        <a class="btn primary" href="mailto:czazuaga@gmail.com">czazuaga@gmail.com</a>
-      </div>
+    <section class="section" id="troubleshooting">
+      <h2>Troubleshooting</h2>
+
+      <h3>Unreal says the plugin was built for another version</h3>
+      <p>Install the PrefabForge package that matches your Unreal version.</p>
+
+      <h3>PrefabForge does not appear in Unreal</h3>
+      <p>Check that the PrefabForge folders are inside your project and that the required Unreal plugins are enabled.</p>
+
+      <h3>Unity material is pink</h3>
+      <p>Make sure the correct render pipeline is active. URP projects need URP installed and configured.</p>
+
+      <h3>A material imported as glass/mixed but should be solid</h3>
+      <p>In Unity, open Material Re-Forge and apply <b>Opaque</b>.</p>
+
+      <h3>The Unity import cannot find the asset</h3>
+      <p>Import the complete PrefabForge export folder. Do not move only the FBX or only the textures.</p>
     </section>
+
+
+
+    <div class="footer">PrefabForge v1.0 — Local offline guide.</div>
   </main>
-
-  <footer class="wrap footer">
-    <span>© Carlos Azuaga</span>
-    <span>Software Engineer &amp; Game Developer</span>
-  </footer>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
